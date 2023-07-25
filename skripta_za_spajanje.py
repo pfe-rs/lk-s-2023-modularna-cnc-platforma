@@ -1,36 +1,17 @@
-import pygcode
+def combine_files(file_list, output_file):
+    try:
+        with open(output_file, 'w') as combined_file:
+            for file_name in file_list:
+                with open(file_name, 'r') as current_file:
+                    content = current_file.read()
+                    combined_file.write(content)
 
-def merge_gcode_files(file_paths):
-    merged_gcode = []
+        print("Files combined successfully!")
+    except Exception as e:
+        print("An error occurred:", e)
 
-    for file_path in file_paths:
-        with open(file_path, 'r') as file:
-            gcode_content = file.read()
-            gcode = pygcode.GCode().parse(gcode_content)
-            merged_gcode.extend(gcode)
+# Replace these file names with your actual file paths
+file_list = ["file1.txt", "file2.txt", "file3.txt"]
+output_file = "combined.txt"
 
-    return merged_gcode
-
-def save_merged_gcode(merged_gcode, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        for line in merged_gcode:
-            output_file.write(str(line) + '\n')
-
-if __name__ == "__main__":
-    # Replace these paths with the actual paths of your G-code files
-    file1_path = 'Pikachu1.gcode'
-    file2_path = 'Pikachu2.gcode'
-    file3_path = 'Pikachu3.gcode'
-
-    output_file_path = 'Pikachu.gcode'
-
-    # List the files in the desired order of merging
-    file_paths = [file1_path, file2_path, file3_path]
-
-    # Merge the G-code files
-    merged_gcode = merge_gcode_files(file_paths)
-
-    # Save the merged G-code to a new file
-    save_merged_gcode(merged_gcode, output_file_path)
-
-    print("Merging complete. Merged G-code saved to:", output_file_path)
+combine_files(file_list, output_file)
