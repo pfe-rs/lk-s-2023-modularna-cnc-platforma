@@ -49,10 +49,10 @@ def svg_to_gcode(svg_file, feed_rate, plunge_rate, z_depth):
     return gcode
 
 # Example usage
-svg_file = "logo_bez_senki.svg"  # Replace with the path to your SVG file
+svg_file = "android-logo.svg"  # Replace with the path to your SVG file
 feed_rate = 1000  # Replace with the desired feed rate (units per minute)
 plunge_rate = 100  # Replace with the desired plunge rate (units per minute)
-z_depth = -10  # Replace with the desired Z depth for cutting or engraving
+z_depth = -5  # Replace with the desired Z depth for cutting or engraving
 
 gcode = svg_to_gcode(svg_file, feed_rate, plunge_rate, z_depth)
 
