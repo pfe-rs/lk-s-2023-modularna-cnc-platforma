@@ -4,7 +4,8 @@ def combine_files(file_list, output_file):
             for file_name in file_list:
                 with open(file_name, 'r') as current_file:
                     lines = current_file.readlines()
-                    filtered_lines = [line for line in lines if not (line.strip().startswith(';') or line.strip().startswith('M'))]
+                    filtered_lines = [line for line in lines if line.strip() and not (line.strip().startswith(';') or line.strip().startswith('M'))]
+                    #filtered_lines2 = [line for line in filtered_lines if not (line.strip().startswith(';') or line.strip().startswith('M'))]
                     combined_file.writelines(filtered_lines)
 
         print("Files combined successfully!")
