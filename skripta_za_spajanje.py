@@ -16,8 +16,7 @@ def combine_files(file_list, output_file):
     except Exception as e:
         print("An error occurred:", e)
 
-# Replace these file names with your actual file paths
-file_list = ["Pikachu1.gcode", "Pikachu2.gcode", "Pikachu3.gcode"]
-output_file = "Pikachu.gcode"
+file_list = ["Code1.gcode", "Code2.gcode", "Code3.gcode"]
+output_file = "Code.gcode"
 
 combine_files(file_list, output_file)
