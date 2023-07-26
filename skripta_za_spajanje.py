@@ -11,7 +11,7 @@ def combine_files(file_list, output_file):
         print("An error occurred:", e)
 
 # Replace these file names with your actual file paths
-file_list = ["file1.txt", "file2.txt", "file3.txt"]
-output_file = "combined.txt"
+file_list = ["Pikachu1.gcode", "Pikachu2.gcode", "Pikachu3.gcode"]
+output_file = "Pikachu.gcode"
 
 combine_files(file_list, output_file)
